@@ -255,18 +255,28 @@ document.getElementById("formSection").classList.remove("hidden");
 }
 
 window.onload = function () {
-  if (window.google && google.accounts && google.accounts.id) {
-    google.accounts.id.initialize({
-      client_id: GOOGLE_CLIENT_ID,
-      callback: handleCredentialResponse
-    });
-    google.accounts.id.renderButton(
-      document.getElementById("googleSignInDiv"),
-      { theme: "outline", size: "large", text: "signin_with" }
-    );
-  }
-};
 
+if (window.google && google.accounts && google.accounts.id) {
+
+google.accounts.id.initialize({
+client_id: GOOGLE_CLIENT_ID,
+callback: handleCredentialResponse,
+auto_select: false,
+cancel_on_tap_outside: false
+});
+
+google.accounts.id.renderButton(
+document.getElementById("googleSignInDiv"),
+{
+theme: "outline",
+size: "large",
+text: "signin_with",
+width:320
+}
+);
+google.accounts.id.prompt();
+}
+};
 
 // build 4 qualification blocks
 const qualBlocks = document.getElementById('qualBlocks');
