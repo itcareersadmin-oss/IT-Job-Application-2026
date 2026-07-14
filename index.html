@@ -244,8 +244,7 @@ function handleCredentialResponse(response) {
     const statusEl = document.getElementById('googleVerifyStatus');
     statusEl.textContent = '✓ Verified as ' + googleVerifiedEmail;
     statusEl.classList.remove('pending');
-    document.getElementById("email").value = googleVerifiedEmail;
-document.getElementById("email").readOnly = true;
+    document.getElementById("email").value = "";
 document.getElementById("googleVerifyBox").style.display = "none";
 document.getElementById("formSection").classList.remove("hidden");
   } catch (err) {
