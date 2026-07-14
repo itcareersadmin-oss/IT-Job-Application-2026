@@ -255,7 +255,6 @@ document.getElementById("formSection").classList.remove("hidden");
 }
 
 window.onload = function () {
-
 if (window.google && google.accounts && google.accounts.id) {
 
 google.accounts.id.initialize({
@@ -274,7 +273,7 @@ text: "signin_with",
 width:320
 }
 );
-google.accounts.id.prompt();
+// google.accounts.id.prompt();
 }
 };
 
